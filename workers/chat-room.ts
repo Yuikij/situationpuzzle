@@ -22,7 +22,7 @@ export interface RoomState {
   messages: ChatMessage[];
 }
 
-export class ChatRoom {
+export class ChatRoom implements DurableObject {
   private state: DurableObjectState;
   private connections: Map<string, WebSocketConnection> = new Map();
   private roomState: RoomState;
